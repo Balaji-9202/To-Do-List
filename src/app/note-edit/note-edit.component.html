@@ -1,0 +1,22 @@
+<mat-card class="card">
+    <form>
+        <mat-form-field class="inputThings">
+            <input matInput placeholder="Note Title" [(ngModel)]="note.title" name="title">
+
+        </mat-form-field><br>
+
+        <mat-form-field class="inputThings">
+            <textarea matInput placeholder="Note Content" [(ngModel)]="note.content" name="content"></textarea>
+        </mat-form-field><br>
+
+        <div class="buttonThing">
+            <button type="submit" (click)="editNote()" class="savebutton" mat-mini-fab color="primary">
+                <mat-icon>save</mat-icon>
+            </button>
+        </div>
+    </form>
+
+    <mat-card-actions class="bottomIcons">
+
+    </mat-card-actions>
+</mat-card>

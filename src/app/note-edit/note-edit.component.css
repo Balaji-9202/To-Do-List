@@ -1,0 +1,16 @@
+.card{   
+    margin-left: 40%;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px 1px ;
+    width: 450px;    
+    height: 230px;
+    margin-top: 40px;
+    position: relative;
+
+}
+
+.inputThings{    
+    margin: 10px;
+    width: 430px;
+}
+

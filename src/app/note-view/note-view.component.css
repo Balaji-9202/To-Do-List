@@ -1,0 +1,12 @@
+#cardBox {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
+.fabContainer {
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;    
+}

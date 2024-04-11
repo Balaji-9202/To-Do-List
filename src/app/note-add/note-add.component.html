@@ -1,0 +1,50 @@
+<mat-expansion-panel class="box-card">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            New Note
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form (ngSubmit)="addNote(noteForm)" #noteForm="ngForm">
+        <mat-form-field class="inputThings">
+            <input matInput placeholder="Note Title" [(ngModel)]="note.title" name="title" #title="ngModel" required>
+            <mat-error *ngIf="title.errors?.['required']">
+                note title is required
+            </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="inputThings">
+            <textarea matInput placeholder="Note Content" [(ngModel)]="note.content" name="content" #content="ngModel"
+                minlength="5" required></textarea>
+            <mat-error *ngIf="content.errors?.['required']">note content is required </mat-error>
+            <mat-error *ngIf="content.errors?.['minlength']">minimum 5 characters</mat-error>
+        </mat-form-field><br>
+
+         <!-- <mat-form-field>
+            <input matInput placeholder="Reminder Date" [(ngModel)]="note.reminderDate" name="reminderDate"
+                #reminderDate="ngModel" required [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="reminderDate.errors?.['required']">reminder date is required</mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="inputThings">
+            <input matInput placeholder="Category" [(ngModel)]="note.category" name="category" required>
+        </mat-form-field><br>
+
+        <mat-radio-group matInput class="inputThings" name="priority" #priority="ngModel" [(ngModel)]="note.priority">
+            <mat-label>Priority Level</mat-label><br><br>
+            <mat-radio-button class="buttonselector" value="Low">Low</mat-radio-button>
+            <mat-radio-button class="buttonselector" value="Medium">Medium</mat-radio-button>
+            <mat-radio-button class="buttonselector" value="High">High</mat-radio-button>
+            <mat-radio-button class="buttonselector" value="Critical">Critical</mat-radio-button>
+        </mat-radio-group><br>
+        <br> -->
+
+        <div class="buttonThing">
+            <button type="submit" class="savebutton" mat-mini-fab color="primary" [disabled]="noteForm.invalid">
+                <mat-icon>save</mat-icon>
+            </button>
+        </div>
+    </form>
+</mat-expansion-panel>

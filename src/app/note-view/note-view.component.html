@@ -1,0 +1,17 @@
+<div >    
+    <div *ngIf="showAddNote" class="addNoteContainer">
+        <app-note-add (noteAdded)="onNoteAdded($event)"></app-note-add>
+    </div>
+    <app-search (searchedText)="searchTitle($event)"></app-search>
+    <div id="cardBox">
+        <app-note *ngFor="let note of notes" [note]="note"></app-note>
+    </div>
+    <div class="fabContainer">
+        <button mat-fab color="primary" aria-label="button with a add icon" (click)="toggleAddNote()">
+            <mat-icon>{{showAddNote?'remove':'add'}}</mat-icon>
+        </button>
+    </div>
+</div>
+
+
+
